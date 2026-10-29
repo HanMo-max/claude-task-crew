@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-29",
+  "client": "Claude Code CLI",
+  "version": "2.1.312",
+  "scope": "Synthetic read-only routing smoke test; not a quality/cost benchmark",
+  "skill_loaded": true,
+  "discovered_roles": [
+    "explorer",
+    "researcher",
+    "reviewer",
+    "tester",
+    "worker"
+  ],
+  "subagents": [
+    {
+      "role": "tester",
+      "requested_model": "sonnet",
+      "effort": "medium",
+      "finished": true,
+      "response_models": [
+        "claude-sonnet-5-5"
+      ]
+    },
+    {
+      "role": "explorer",
+      "requested_model": "haiku",
+      "effort": "medium",
+      "finished": true,
+      "response_models": [
+        "claude-haiku-5-5"
+      ]
+    }
+  ],
+  "outcomes": {
+    "marker": "CREW_ROUTE_OK_20261029",
+    "boundary_expected": 6,
+    "boundary_actual": 3,
+    "regression_assertion": "assert inclusive_total(3) == 6",
+    "root_verified_against_synthetic_fixture": true
+  },
+  "status": "passed",
+  "not_verified": [
+    "Desktop subagent overrides for every client version",
+    "Opus/Fable subagent routes",
+    "Real-project completion quality or cost savings"
+  ]
+}
